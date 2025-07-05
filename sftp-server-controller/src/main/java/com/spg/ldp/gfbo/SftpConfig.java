@@ -3,7 +3,7 @@ package com.spg.ldp.gfbo;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.core.io.FileSystemResource;
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.util.StringUtils;
 
 import lombok.Data;
@@ -30,13 +30,10 @@ public class SftpConfig {
 		sftp.setHost(host);
 		sftp.setPort(port);
 		sftp.setUser(user);
+		sftp.setPrivateKey(new ClassPathResource("id_rsa"));
 		sftp.setAllowUnknownKeys(allowUnknownKeys);
 		if (StringUtils.hasText(password)) {
 			sftp.setPassword(password);
-		}
-		if (StringUtils.hasText(privateKey)) {
-			String cleanedPath = privateKey.replace("file:///", "").replace("file://", "");
-			sftp.setPrivateKey(new FileSystemResource(cleanedPath));
 		}
 		if (StringUtils.hasText(privateKeyPassphrase)) {
 			sftp.setPrivateKeyPassphrase(privateKeyPassphrase);
