@@ -30,7 +30,7 @@ public class SftpConfig {
 		sftp.setHost(host);
 		sftp.setPort(port);
 		sftp.setUser(user);
-		/* sftp.setPrivateKey(new ClassPathResource("id_rsa")); */
+		sftp.setPrivateKey(new ClassPathResource("id_rsa"));
 		sftp.setAllowUnknownKeys(allowUnknownKeys);
 		if (StringUtils.hasText(password)) {
 			sftp.setPassword(password);
