@@ -1,4 +1,4 @@
-package com.spg.ldp.gfbo;
+package com.spg.ldp;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

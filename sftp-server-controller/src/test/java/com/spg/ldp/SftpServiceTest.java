@@ -1,4 +1,4 @@
-package com.spg.ldp.gfbo;
+package com.spg.ldp;
 
 import java.io.ByteArrayInputStream;
 

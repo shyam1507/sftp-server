@@ -1,4 +1,4 @@
-package com.spg.ldp.gfbo;
+package com.spg.ldp;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
