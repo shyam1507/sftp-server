@@ -36,9 +36,11 @@ public class SftpService {
 		try (ClientSession session = client.connect(user, host, port).verify().getSession()) {
 			if (password != null) {
 				session.addPasswordIdentity(password);
+				System.out.println("Authenticating with password..." + password);
 				session.auth().verify();
 			} else if (privateKey != null) {
 				FileKeyPairProvider keyPairProvider = new FileKeyPairProvider(privateKey.getFile().toPath());
+				System.out.println("Authenticating with private key...");
 				if (privateKeyPassphrase != null) {
 					keyPairProvider.setPasswordFinder(FilePasswordProvider.of(privateKeyPassphrase));
 				}

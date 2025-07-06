@@ -10,7 +10,7 @@ import lombok.Data;
 import lombok.Setter;
 
 @Configuration
-@ConfigurationProperties(prefix = "gfbo.sftp")
+@ConfigurationProperties(prefix = "sftp")
 @Setter
 @Data
 public class SftpConfig {
@@ -30,7 +30,7 @@ public class SftpConfig {
 		sftp.setHost(host);
 		sftp.setPort(port);
 		sftp.setUser(user);
-		sftp.setPrivateKey(new ClassPathResource("id_rsa"));
+		/* sftp.setPrivateKey(new ClassPathResource("id_rsa")); */
 		sftp.setAllowUnknownKeys(allowUnknownKeys);
 		if (StringUtils.hasText(password)) {
 			sftp.setPassword(password);
@@ -41,6 +41,8 @@ public class SftpConfig {
 		if (StringUtils.hasText(baseRemoteDirectory)) {
 			sftp.setBaseRemoteDirectory(baseRemoteDirectory);
 		}
+		System.out.println("bean create" + sftp);
 		return sftp;
+		
 	}
 }

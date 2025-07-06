@@ -1,9 +1,8 @@
-gfbo:
-  sftp:
+sftp:
     host: ${host}
     port: ${port}
     user: ${user}
     allow-unknown-keys: true
-    private-key: ${private-key}
+    password: ${password}
     private-key-passphrase: ""
     base-remote-directory: ${base-remote-directory}
